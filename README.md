@@ -16,6 +16,9 @@ Hands-on learning notes and notebooks from my Databricks learning journey.
 - Created my first Databricks notebook
 - Executed basic PySpark DataFrame operations
 
+### 📓 Notebooks
+- notebooks/day1_databricks_basics.ipynb
+  
 ## Practice
 ```python
 data = [("iPhone", 999), ("Samsung", 799), ("MacBook", 1299)]
