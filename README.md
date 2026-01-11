@@ -73,6 +73,59 @@ select
 
 filter
 
+📅 DAY 3 – PySpark Transformations Deep Dive
+
+Date: 11/01/2026
+
+What I Learned
+
+Differences between PySpark and Pandas, especially in scalability and distributed execution
+
+Performing different types of joins:
+
+Inner, Left, Right, Outer
+
+Using window functions for analytical computations like running totals and rankings
+
+Creating derived features using aggregations and transformations
+
+Practical usage of pivot operations for funnel and conversion analysis
+
+What I Worked On
+
+Loaded the full e-commerce dataset into Spark DataFrames
+
+Applied advanced transformations to simulate real-world analytics use cases
+
+Implemented revenue analysis, user behavior tracking, and conversion metrics
+
+Hands-On Implementation (PySpark)
+from pyspark.sql import functions as F
+from pyspark.sql.window import Window
+
+# Top 5 products by revenue
+revenue = events.filter(F.col("event_type") == "purchase") \
+    .groupBy("product_id", "product_name") \
+    .agg(F.sum("price").alias("revenue")) \
+    .orderBy(F.desc("revenue")) \
+    .limit(5)
+
+# Running total of events per user using window function
+window = Window.partitionBy("user_id").orderBy("event_time")
+events_with_running_total = events.withColumn(
+    "cumulative_events",
+    F.count("*").over(window)
+)
+
+# Conversion rate by category using pivot
+conversion_rate = events.groupBy("category_code", "event_type").count() \
+    .pivot("event_type") \
+    .sum("count") \
+    .withColumn(
+        "conversion_rate",
+        (F.col("purchase") / F.col("view")) * 100
+    )
+
 groupBy
 
 orderBy
