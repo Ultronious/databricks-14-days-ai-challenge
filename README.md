@@ -6,6 +6,7 @@ This repository showcases my day-wise progression in data engineering, combining
 📓 Notebooks: Each day’s hands-on work is implemented in Databricks notebooks within this repository.
 
 📅 DAY 1 (09/01/2026) – Platform Setup & First Steps
+
 📘 Key Learnings
 
 Why Databricks outperforms Pandas and Hadoop for large-scale data processing
@@ -35,6 +36,7 @@ Created and executed the first Databricks notebook
 Performed basic PySpark transformations
 
 📅 DAY 2 (10/01/2026) – Apache Spark Fundamentals
+
 📘 Key Learnings
 
 Apache Spark architecture: Driver, Executors, DAG
@@ -68,6 +70,7 @@ orderBy
 Exported processed results for downstream use
 
 📅 DAY 3 (11/01/2026) – PySpark Transformations Deep Dive
+
 📘 Key Learnings
 
 Differences between distributed processing (PySpark) and in-memory processing (Pandas)
@@ -91,6 +94,7 @@ Calculated conversion rates using advanced transformations
 Exported transformed datasets for reporting
 
 📅 DAY 4 (12/01/2026) – Delta Lake Introduction
+
 📘 Key Learnings
 
 Delta Lake architecture and fundamentals
@@ -112,6 +116,7 @@ Tested schema enforcement to prevent invalid writes
 Handled data quality issues during ingestion
 
 📅 DAY 5 (13/01/2026) – Delta Lake Advanced
+
 📘 Key Learnings
 
 Delta Lake Time Travel using version history
