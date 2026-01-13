@@ -1,134 +1,167 @@
-# databricks-14-days-ai-challenge
-Hands-on learning notes and notebooks from my Databricks learning journey.
-### **DAY 1 (09/01/26)– Platform Setup & First Steps**
-📅 09/01/2026
+🚀 databricks-14-days-ai-challenge
 
-## What I learned
-- Why Databricks is preferred over Pandas and Hadoop for large-scale data
-- Basics of Lakehouse architecture
-- Databricks workspace components (Workspace, Compute, Data Explorer)
-- How Databricks is used by companies for large-scale analytics
-- Ran my first PySpark commands
+Hands-on learning notes and Databricks notebooks from my Databricks 14 Days AI Challenge journey.
+This repository showcases my day-wise progression in data engineering, combining core theory, practical PySpark implementations, and real-world data lake concepts using Databricks.
 
-## What I worked on
-- Created a Databricks Community Edition account
-- Explored workspace navigation and compute setup
-- Created my first Databricks notebook
-- Executed basic PySpark DataFrame operations
+📓 Notebooks: Each day’s hands-on work is implemented in Databricks notebooks within this repository.
 
-### 📓 Notebooks
-- notebooks/day1_databricks_basics.ipynb
-  
-## Practice
-```python
-data = [("iPhone", 999), ("Samsung", 799), ("MacBook", 1299)]
-df = spark.createDataFrame(data, ["product", "price"])
-df.show()
+📅 DAY 1 (09/01/2026) – Platform Setup & First Steps
+📘 Key Learnings
 
-df.filter(df.price > 1000).show()
-```
-### **DAY 2 (10/01/26) – Apache Spark Fundamentals**
-📅 10/01/2026
+Why Databricks outperforms Pandas and Hadoop for large-scale data processing
 
-🚀 Spark Fundamentals & Databricks Hands-On
+Fundamentals of the Lakehouse architecture
 
-This repository documents my learning journey of Apache Spark fundamentals, focusing on core concepts, architecture, and hands-on DataFrame operations using Databricks notebooks.
+Core Databricks workspace components:
 
-It includes concise theory notes, practical tasks, and a PDF reference suitable for revision and interviews.
+Workspace
 
-📘 What I Learned
-🔹 Spark Core Concepts
+Compute
 
-Spark architecture: Driver, Executors, DAG
+Data Explorer
 
-Difference between DataFrames and RDDs
+How enterprises use Databricks for analytics and data engineering
+
+Executed first PySpark DataFrame operations
+
+🛠️ Hands-On Work
+
+Set up Databricks Community Edition environment
+
+Explored workspace navigation and cluster configuration
+
+Created and executed the first Databricks notebook
+
+Performed basic PySpark transformations
+
+📅 DAY 2 (10/01/2026) – Apache Spark Fundamentals
+📘 Key Learnings
+
+Apache Spark architecture: Driver, Executors, DAG
+
+DataFrames vs RDDs
 
 Lazy evaluation and execution flow
 
-Spark actions vs transformations
+Transformations vs Actions
 
-🔹 Databricks Essentials
-
-Notebook magic commands:
-
-%python
-
-%sql
-
-%fs
+Databricks notebook magic commands (%python, %sql, %fs)
 
 Reading and writing data using DBFS
 
-Running Spark SQL on DataFrames
+🛠️ Hands-On Work
 
-🛠️ Hands-On Tasks Completed
+Ingested sample e-commerce CSV datasets
 
-Uploaded a sample e-commerce CSV dataset
+Loaded data into Spark DataFrames
 
-Read data into a Spark DataFrame
-
-Performed core operations:
+Applied core transformations:
 
 select
 
 filter
 
-📅 DAY 3 – PySpark Transformations Deep Dive
-
-Date: 11/01/2026
-
-What I Learned
-
-Differences between PySpark and Pandas, especially in scalability and distributed execution
-
-Performing different types of joins:
-
-Inner, Left, Right, Outer
-
-Using window functions for analytical computations like running totals and rankings
-
-Creating derived features using aggregations and transformations
-
-Practical usage of pivot operations for funnel and conversion analysis
-
-What I Worked On
-
-Loaded the full e-commerce dataset into Spark DataFrames
-
-Applied advanced transformations to simulate real-world analytics use cases
-
-Implemented revenue analysis, user behavior tracking, and conversion metrics
-
-Hands-On Implementation (PySpark)
-from pyspark.sql import functions as F
-from pyspark.sql.window import Window
-
-# Top 5 products by revenue
-revenue = events.filter(F.col("event_type") == "purchase") \
-    .groupBy("product_id", "product_name") \
-    .agg(F.sum("price").alias("revenue")) \
-    .orderBy(F.desc("revenue")) \
-    .limit(5)
-
-# Running total of events per user using window function
-window = Window.partitionBy("user_id").orderBy("event_time")
-events_with_running_total = events.withColumn(
-    "cumulative_events",
-    F.count("*").over(window)
-)
-
-# Conversion rate by category using pivot
-conversion_rate = events.groupBy("category_code", "event_type").count() \
-    .pivot("event_type") \
-    .sum("count") \
-    .withColumn(
-        "conversion_rate",
-        (F.col("purchase") / F.col("view")) * 100
-    )
-
 groupBy
 
 orderBy
 
-Exported processed results back to storage
+Exported processed results for downstream use
 
+📅 DAY 3 (11/01/2026) – PySpark Transformations Deep Dive
+📘 Key Learnings
+
+Differences between distributed processing (PySpark) and in-memory processing (Pandas)
+
+Join strategies: Inner, Left, Right, Outer
+
+Window functions for analytical use cases
+
+Aggregations and derived metric creation
+
+Pivot operations for funnel and conversion analysis
+
+🛠️ Hands-On Work
+
+Performed revenue analysis on transactional data
+
+Implemented user behavior and engagement metrics
+
+Calculated conversion rates using advanced transformations
+
+Exported transformed datasets for reporting
+
+📅 DAY 4 (12/01/2026) – Delta Lake Introduction
+📘 Key Learnings
+
+Delta Lake architecture and fundamentals
+
+ACID transactions in data lakes
+
+Schema enforcement and validation
+
+Comparison of Delta Lake vs Parquet
+
+🛠️ Hands-On Work
+
+Converted raw CSV data into Delta format
+
+Created Delta tables using PySpark and Spark SQL
+
+Tested schema enforcement to prevent invalid writes
+
+Handled data quality issues during ingestion
+
+📅 DAY 5 (13/01/2026) – Delta Lake Advanced
+📘 Key Learnings
+
+Delta Lake Time Travel using version history
+
+MERGE operations for incremental upserts
+
+Table optimization using OPTIMIZE
+
+Data skipping using ZORDER
+
+Storage cleanup and cost management using VACUUM
+
+🛠️ Hands-On Work
+
+Implemented incremental MERGE pipelines
+
+Queried historical versions of Delta tables
+
+Optimized Delta tables for query performance
+
+Cleaned obsolete files to manage storage efficiently
+
+🧠 Key Takeaways
+
+Apache Spark enables scalable distributed data processing
+
+Databricks simplifies end-to-end data engineering workflows
+
+Delta Lake makes data lakes reliable, auditable, and production-ready
+
+Optimization and versioning are essential for real-world data pipelines
+
+🧰 Tech Stack
+
+Apache Spark
+
+PySpark
+
+Delta Lake
+
+Spark SQL
+
+Databricks Community Edition
+
+🚀 Upcoming Topics
+
+Structured Streaming with Spark
+
+Performance tuning and optimization
+
+End-to-end data pipeline design
+
+Real-world data engineering projects
