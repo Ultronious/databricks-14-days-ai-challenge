@@ -149,3 +149,12 @@ Each day’s hands-on work is implemented in Databricks notebooks within this re
 - Performance tuning and optimization strategies
 - End-to-end data pipeline design using Delta Lake
 - Applying best practices to real-world data engineering use cases
+
+---
+
+📂 Note on Repository Structure
+
+The notebooks in this repository were developed and exported directly from the Databricks workspace.
+For learning purposes, Medallion Architecture (Bronze, Silver, Gold) is implemented within notebooks
+using logical sections rather than separate directories.
+
