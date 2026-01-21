@@ -1,9 +1,12 @@
 🚀 Databricks 14 Days AI Challenge
+
 Hands-on Data Engineering with Databricks, Spark & Delta Lake
 
-This repository documents my day-wise learning journey (Day 1–11) through the Databricks 14 Days AI Challenge, focused on building strong fundamentals in data engineering, analytics, performance optimization, and ML preparation using Databricks.
+This repository documents my day-wise learning journey (Day 1–13) through the Databricks 14 Days AI Challenge, focused on building strong fundamentals in data engineering, analytics, performance optimization, and machine learning preparation using Databricks.
 
-The goal of this challenge is not just learning tools, but understanding how real-world data platforms are designed, optimized, and governed.
+The goal of this challenge is not just learning tools, but understanding how real-world data platforms are designed, optimized, governed, and extended into ML workflows.
+
+All implementations are done using Databricks Community Edition.
 
 📌 What This Repository Covers
 
@@ -23,13 +26,15 @@ Performance optimization and tuning strategies
 
 Statistical analysis & ML preparation
 
-All implementations are done using Databricks Community Edition.
+ML experiment tracking and model comparison using MLflow
+
+End-to-end ML workflows using Spark ML Pipelines
 
 📓 Notebooks
 
 Each day’s learning is implemented as Databricks notebooks, exported and versioned in this repository.
 
-The notebooks combine theory + hands-on experimentation, closely resembling real-world data engineering workflows.
+The notebooks combine theory + hands-on experimentation, closely resembling real-world data engineering and ML workflows.
 
 📅 Day-wise Learning Summary
 📅 DAY 1 (09/01/2026) – Platform Setup & First Steps
@@ -323,24 +328,85 @@ Session-based behavior features
 🧠 Key Insight
 Machine learning starts with data understanding and feature quality, not models.
 
+📅 DAY 12 (20/01/2026) – MLflow Basics & Experiment Tracking
+
+📘 Key Learnings
+
+Why experiment tracking is critical in ML workflows
+
+MLflow components:
+
+Tracking
+
+Experiments & runs
+
+Model logging
+
+Difference between ad-hoc model training and reproducible experiments
+
+Using MLflow UI for comparison and analysis
+
+🛠️ Hands-On Work
+
+Trained a regression model on ML-ready data
+
+Logged parameters, metrics, and model artifacts
+
+Created and managed MLflow experiments
+
+Compared runs using MLflow UI
+
+🧠 Key Insight
+ML systems require traceability. Without experiment tracking, model improvement becomes guesswork.
+
+📅 DAY 13 (21/01/2026) – Model Comparison & Spark ML Pipelines
+
+📘 Key Learnings
+
+Training and evaluating multiple models
+
+Hyperparameter tuning and metric-based comparison
+
+Feature importance for model interpretability
+
+Spark ML Pipelines for structured ML workflows
+
+🛠️ Hands-On Work
+
+Trained multiple regression models
+
+Logged and compared all runs using MLflow
+
+Analyzed feature importance
+
+Built end-to-end Spark ML Pipelines
+
+Selected the best-performing model based on metrics
+
+🧠 Key Insight
+Tracking, comparison, and pipelines transform ML from experimentation into engineering.
+
 🏗️ High-Level Architecture & ML Flow
+
 Raw Data
-  ↓
+↓
 Bronze (Raw Delta)
-  ↓
+↓
 Silver (Cleaned & Validated)
-  ↓
+↓
 Gold (Business Aggregates)
-  ↓
-SQL Analytics & Dashboards
-  ↓
+↓
 Statistical Analysis & Feature Engineering
-  ↓
-ML-Ready Datasets
+↓
+MLflow Experiments & Model Tracking
+↓
+Spark ML Pipelines
+↓
+Best Model Selection
 
-This Lakehouse-based architecture enables data engineering, analytics, and ML to coexist on a single platform.
+This Lakehouse-based architecture allows data engineering, analytics, and ML to coexist on a single platform.
 
-🧠 Key Takeaways (Day 1–11)
+🧠 Key Takeaways (Day 1–13)
 
 Spark enables scalable distributed processing
 
@@ -352,9 +418,11 @@ Medallion Architecture improves maintainability
 
 Jobs enable production-grade workflows
 
-Governance is critical at scale
+Governance is essential at scale
 
-Analytics, performance, and ML are tightly connected
+Feature quality drives ML performance
+
+MLflow enables reproducible ML systems
 
 🧰 Tech Stack
 
@@ -365,6 +433,10 @@ PySpark
 Spark SQL
 
 Delta Lake
+
+MLflow
+
+Spark ML
 
 Databricks Jobs
 
@@ -380,9 +452,9 @@ Late-arriving data handling
 
 Advanced performance tuning
 
-Production-ready pipeline patterns
+Production-grade pipeline patterns
 
-ML model integration
+ML model deployment and serving
 
 📂 Note on Repository Structure
 
