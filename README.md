@@ -1,12 +1,28 @@
 🚀 Databricks 14 Days AI Challenge
 
-Hands-on Data Engineering with Databricks, Spark & Delta Lake
+Hands-on Data Engineering, Analytics, ML & AI with Databricks
 
-This repository documents my day-wise learning journey (Day 1–13) through the Databricks 14 Days AI Challenge, focused on building strong fundamentals in data engineering, analytics, performance optimization, and machine learning preparation using Databricks.
+This repository documents my complete learning journey (Day 1–Day 14) through the Databricks 14 Days AI Challenge, focused on building strong fundamentals in data engineering, analytics, performance optimization, machine learning, and AI-powered analytics using the Databricks Lakehouse platform.
 
-The goal of this challenge is not just learning tools, but understanding how real-world data platforms are designed, optimized, governed, and extended into ML workflows.
+The goal of this challenge was not just learning tools, but understanding how real-world data platforms are designed — from raw ingestion and governance to analytics, ML workflows, and AI-assisted insights.
 
 All implementations are done using Databricks Community Edition.
+
+🎯 Project Objective
+
+To design and implement a modern Lakehouse-based data platform that supports:
+
+Scalable data ingestion and transformation
+
+Reliable and governed data storage
+
+Business analytics and dashboards
+
+Machine learning experimentation and model comparison
+
+AI-assisted analytics using natural language and GenAI
+
+This project reflects how data engineers, analysts, and ML engineers collaborate on a single platform in real-world environments.
 
 📌 What This Repository Covers
 
@@ -30,399 +46,116 @@ ML experiment tracking and model comparison using MLflow
 
 End-to-end ML workflows using Spark ML Pipelines
 
+AI-powered analytics using Databricks Genie & Mosaic AI
+
 📓 Notebooks
 
 Each day’s learning is implemented as Databricks notebooks, exported and versioned in this repository.
 
-The notebooks combine theory + hands-on experimentation, closely resembling real-world data engineering and ML workflows.
+The notebooks combine theory + hands-on experimentation, closely resembling real-world data engineering, analytics, ML, and AI-assisted workflows.
 
-📅 Day-wise Learning Summary
-📅 DAY 1 (09/01/2026) – Platform Setup & First Steps
+📅 Day-wise Learning Overview
+Day 1–3: Spark & PySpark Fundamentals
 
-📘 Key Learnings
-
-Why Databricks is preferred over Pandas and Hadoop at scale
-
-Introduction to the Lakehouse Architecture
-
-Core Databricks workspace components:
-
-Workspace
-
-Compute
-
-Data Explorer
-
-How enterprises use Databricks for analytics and data engineering
-
-Basics of PySpark DataFrames
-
-🛠️ Hands-On Work
-
-Set up Databricks Community Edition
-
-Explored workspace navigation and cluster configuration
-
-Created and executed the first Databricks notebook
-
-Performed basic PySpark transformations
-
-📅 DAY 2 (10/01/2026) – Apache Spark Fundamentals
-
-📘 Key Learnings
-
-Spark architecture: Driver, Executors, DAG
+Spark architecture, transformations, actions
 
 DataFrames vs RDDs
 
-Lazy evaluation and execution flow
+Joins, aggregations, window functions
 
-Transformations vs Actions
+Funnel and behavioral analysis
 
-Databricks notebook magic commands (%python, %sql, %fs)
-
-Reading and writing data using DBFS
-
-🛠️ Hands-On Work
-
-Ingested sample e-commerce CSV datasets
-
-Loaded data into Spark DataFrames
-
-Applied transformations:
-
-select, filter, groupBy, orderBy
-
-Exported processed results
-
-📅 DAY 3 (11/01/2026) – PySpark Transformations Deep Dive
-
-📘 Key Learnings
-
-Distributed vs in-memory processing
-
-Join strategies: Inner, Left, Right, Outer
-
-Window functions for analytics
-
-Aggregations and derived metrics
-
-Pivot operations for funnel analysis
-
-🛠️ Hands-On Work
-
-Revenue analysis on transactional data
-
-User behavior and engagement metrics
-
-Conversion rate calculations
-
-Exported transformed datasets
-
-📅 DAY 4 (12/01/2026) – Delta Lake Introduction
-
-📘 Key Learnings
-
-Delta Lake architecture
+Day 4–6: Delta Lake & Medallion Architecture
 
 ACID transactions in data lakes
 
-Schema enforcement and validation
+Schema enforcement and evolution
 
-Delta Lake vs Parquet
+Time travel, MERGE, OPTIMIZE, VACUUM
 
-🛠️ Hands-On Work
+Bronze → Silver → Gold pipeline design
 
-Converted raw CSV data into Delta format
+Day 7–8: Workflows & Governance
 
-Created Delta tables using PySpark and Spark SQL
+Databricks Jobs and orchestration
 
-Tested schema enforcement
+Parameterized notebooks
 
-Handled data quality issues
+Unity Catalog concepts
 
-📅 DAY 5 (13/01/2026) – Delta Lake Advanced
+Data ownership, access control, and lineage
 
-📘 Key Learnings
+Day 9–10: Analytics & Performance Optimization
 
-Delta Lake Time Travel
+SQL-based KPIs and dashboards
 
-MERGE operations for upserts
+Execution plans and partitioning
 
-OPTIMIZE and ZORDER
+Caching, ZORDER, benchmarking
 
-VACUUM for storage cleanup
+Day 11–13: Machine Learning Workflows
 
-🛠️ Hands-On Work
+Statistical analysis and hypothesis exploration
 
-Implemented incremental MERGE pipelines
+Feature engineering for ML readiness
 
-Queried historical table versions
+MLflow experiment tracking
 
-Optimized Delta tables
+Model comparison and Spark ML Pipelines
 
-Cleaned obsolete files
+Day 14: AI-Powered Analytics
 
-📅 DAY 6 (14/01/2026) – Medallion Architecture
+Natural language analytics using Databricks Genie
 
-📘 Key Learnings
+AI-assisted SQL generation and insights
 
-Bronze, Silver, and Gold layer responsibilities
+Funnel and trend analysis using AI-generated queries
 
-Separation of concerns
+Simple NLP sentiment analysis
 
-Incremental processing patterns
+Exploring Mosaic AI for GenAI + ML lifecycle management
 
-Reliability with Delta Lake
-
-🛠️ Hands-On Work
-
-Designed a Medallion Architecture pipeline
-
-Built:
-
-Bronze (raw ingestion)
-
-Silver (cleaning & validation)
-
-Gold (business aggregations)
-
-Practiced incremental updates
-
-📅 DAY 7 (15/01/2026) – Workflows & Job Orchestration
-
-📘 Key Learnings
-
-Notebooks vs Jobs
-
-Single-task vs multi-task workflows
-
-Parameterization using widgets
-
-Task dependencies and scheduling
-
-Error handling in pipelines
-
-🛠️ Hands-On Work
-
-Parameterized notebooks using dbutils.widgets
-
-Built a multi-task Databricks Job (Bronze → Silver → Gold)
-
-Configured dependencies and scheduling
-
-Implemented fail-fast error handling
-
-🧠 Key Insight
-Orchestration and scheduling are as important as transformations in production pipelines.
-
-📅 DAY 8 (16/01/2026) – Unity Catalog & Data Governance
-
-📘 Key Learnings
-
-Enterprise data governance concepts
-
-Unity Catalog hierarchy (Catalog → Schema → Table)
-
-Managed vs external tables
-
-Fine-grained access control
-
-Data lineage and traceability
-
-🛠️ Hands-On Work
-
-Designed catalog and schema structure
-
-Registered Delta tables across layers
-
-Applied role-based permissions
-
-Created governed views
-
-🧠 Key Insight
-Scalable data platforms require governance, ownership, and traceability.
-
-📅 DAY 9 (17/01/2026) – SQL Analytics & Dashboards
-
-📘 Key Learnings
-
-Analytical Spark SQL queries
-
-KPIs, trends, and ranking analysis
-
-Chart selection for dashboards
-
-🛠️ Hands-On Work
-
-Built queries for:
-
-Revenue trends
-
-User funnels
-
-Top products
-
-Created KPI, line, and bar chart visualizations
-
-Designed an interactive dashboard
-
-🧠 Key Insight
-Analytics is about clarity — asking the right questions and presenting answers effectively.
-
-📅 DAY 10 (18/01/2026) – Performance Optimization
-
-📘 Key Learnings
-
-Query execution plans
-
-Partitioning strategies
-
-OPTIMIZE and ZORDER
-
-Caching techniques
-
-Benchmarking performance
-
-🛠️ Hands-On Work
-
-Analyzed execution plans
-
-Applied partitioning
-
-Optimized Delta tables
-
-Benchmarked before vs after improvements
-
-🧠 Key Insight
-Performance optimization requires understanding execution behavior, not guesswork.
-
-📅 DAY 11 (19/01/2026) – Statistical Analysis & ML Preparation
-
-📘 Key Learnings
-
-Descriptive statistics for data understanding
-
-Hypothesis exploration (weekday vs weekend)
-
-Correlation analysis
-
-Feature engineering for ML
-
-🛠️ Hands-On Work
-
-Loaded curated Silver-layer data
-
-Calculated statistical summaries
-
-Explored behavioral hypotheses
-
-Engineered ML-ready features:
-
-Time-based features
-
-Log-transformed price
-
-Session-based behavior features
-
-🧠 Key Insight
-Machine learning starts with data understanding and feature quality, not models.
-
-📅 DAY 12 (20/01/2026) – MLflow Basics & Experiment Tracking
-
-📘 Key Learnings
-
-Why experiment tracking is critical in ML workflows
-
-MLflow components:
-
-Tracking
-
-Experiments & runs
-
-Model logging
-
-Difference between ad-hoc model training and reproducible experiments
-
-Using MLflow UI for comparison and analysis
-
-🛠️ Hands-On Work
-
-Trained a regression model on ML-ready data
-
-Logged parameters, metrics, and model artifacts
-
-Created and managed MLflow experiments
-
-Compared runs using MLflow UI
-
-🧠 Key Insight
-ML systems require traceability. Without experiment tracking, model improvement becomes guesswork.
-
-📅 DAY 13 (21/01/2026) – Model Comparison & Spark ML Pipelines
-
-📘 Key Learnings
-
-Training and evaluating multiple models
-
-Hyperparameter tuning and metric-based comparison
-
-Feature importance for model interpretability
-
-Spark ML Pipelines for structured ML workflows
-
-🛠️ Hands-On Work
-
-Trained multiple regression models
-
-Logged and compared all runs using MLflow
-
-Analyzed feature importance
-
-Built end-to-end Spark ML Pipelines
-
-Selected the best-performing model based on metrics
-
-🧠 Key Insight
-Tracking, comparison, and pipelines transform ML from experimentation into engineering.
-
-🏗️ High-Level Architecture & ML Flow
-
+🏗️ Architecture Overview
 Raw Data
-↓
-Bronze (Raw Delta)
-↓
-Silver (Cleaned & Validated)
-↓
-Gold (Business Aggregates)
-↓
+   ↓
+Bronze Layer (Raw Delta Tables)
+   ↓
+Silver Layer (Cleaned & Validated Data)
+   ↓
+Gold Layer (Business Aggregates)
+   ↓
+Analytics & Dashboards
+   ↓
 Statistical Analysis & Feature Engineering
-↓
+   ↓
 MLflow Experiments & Model Tracking
-↓
+   ↓
 Spark ML Pipelines
-↓
+   ↓
 Best Model Selection
+   ↓
+AI-Assisted Analytics (Genie & Mosaic AI)
 
-This Lakehouse-based architecture allows data engineering, analytics, and ML to coexist on a single platform.
 
-🧠 Key Takeaways (Day 1–13)
+This Lakehouse-based architecture enables data engineering, analytics, ML, and AI workflows to coexist on a single platform.
+
+🧠 Key Takeaways
 
 Spark enables scalable distributed processing
-
-Databricks simplifies the full data lifecycle
 
 Delta Lake ensures reliability and consistency
 
 Medallion Architecture improves maintainability
 
-Jobs enable production-grade workflows
+Orchestration is critical for production pipelines
 
-Governance is essential at scale
-
-Feature quality drives ML performance
+Feature quality drives ML performance more than models
 
 MLflow enables reproducible ML systems
+
+Governance becomes essential as platforms scale
+
+AI improves analytics by reducing friction, not replacing reasoning
 
 🧰 Tech Stack
 
@@ -438,15 +171,53 @@ MLflow
 
 Spark ML
 
+Databricks Genie
+
+Mosaic AI
+
 Databricks Jobs
 
 Unity Catalog (conceptual)
 
 Databricks Community Edition
 
+▶️ How to Run This Project
+
+Create a Databricks Community Edition account
+👉 https://community.cloud.databricks.com
+
+Create and start a cluster (default settings are sufficient)
+
+Clone this repository:
+
+git clone <repository-url>
+
+
+Import notebooks into Databricks:
+
+Workspace → Import
+
+Upload notebooks from this repo or import via GitHub
+
+Run notebooks sequentially to follow the full workflow:
+
+Spark fundamentals
+
+Delta Lake & Medallion Architecture
+
+Jobs & governance (conceptual)
+
+Analytics & performance tuning
+
+ML workflows with MLflow
+
+AI-powered analytics (Genie & NLP)
+
+📌 No external cloud storage or paid features are required.
+
 🚀 What’s Next
 
-Structured Streaming
+Structured Streaming & real-time pipelines
 
 Late-arriving data handling
 
@@ -456,7 +227,16 @@ Production-grade pipeline patterns
 
 ML model deployment and serving
 
-📂 Note on Repository Structure
+Deeper exploration of GenAI-assisted analytics
 
-Notebooks were developed directly in the Databricks workspace and exported here.
-For learning purposes, Medallion Architecture is implemented within notebooks using logical sections rather than separate directories.
+📂 Notes
+
+This repository is learning-focused, not production-deployed
+
+Medallion layers are implemented logically within notebooks
+
+Sample datasets are used for experimentation
+
+🙌 Acknowledgements
+
+Big thanks to Databricks, Codebasics, and Indian Data Club for organizing such a well-structured, hands-on challenge that encouraged consistency and practical learning.
